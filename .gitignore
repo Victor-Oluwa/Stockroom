@@ -1,0 +1,173 @@
+# ============================================================
+# Stockroom — production-grade .gitignore (Flutter app, Android-first)
+# App code (lib/, assets/, test/, pubspec.*) IS tracked.
+# Generated artifacts, local secrets and device data are NOT.
+# ============================================================
+
+# ---------- Flutter / Dart ----------
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub-cache/
+.pub/
+build/
+coverage/
+doc/api/
+.passive_scan/
+
+# Pubspec lock: tracked for apps (reproducible builds).
+# Uncomment the next line only if this were a published package.
+# pubspec.lock
+
+# ---------- Android ----------
+local.properties
+android/local.properties
+android/.gradle/
+android/captures/
+android/**/build/
+android/app/build/
+*.hprof
+*.dex
+*.apk
+*.aab
+*.ap_
+android/app/debug/
+android/app/profile/
+android/app/release/
+
+# Android signing secrets — NEVER commit keystores or passwords
+*.jks
+*.keystore
+*.p12
+key.properties
+android/key.properties
+android/app/*.jks
+**/release.keystore
+
+# Firebase / Play secrets (keep locally, inject in CI)
+google-services.json
+!example.google-services.json
+android/app/google-services.json
+
+# ---------- iOS / macOS ----------
+ios/Pods/
+ios/.symlinks/
+ios/Flutter/Flutter.podspec
+ios/Flutter/Generated.xcconfig
+ios/Flutter/flutter_export_environment.sh
+ios/ServiceDefinitions.json
+ios/Runner/GoogleService-Info.plist
+*.xcworkspace/xcuserdata/
+*.xcodeproj/xcuserdata/
+*.xcodeproj/project.xcworkspace/xcuserdata/
+DerivedData/
+*.moved-aside
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+*.xcuserstate
+*.xccheckout
+*.xcscmblueprint
+Pods/
+# Podfile.lock is intentionally TRACKED for reproducible iOS builds.
+
+# macOS Finder / metadata
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+
+# ---------- Linux / Windows desktop builds ----------
+linux/flutter/generated_plugin_registrant.*
+linux/flutter/ephemeral/
+windows/flutter/generated_plugin_registrant.*
+windows/flutter/ephemeral/
+windows/out/
+linux/debug/
+linux/release/
+windows/Release/
+windows/Debug/
+
+# ---------- Web build output ----------
+web/canvaskit/
+.version
+web/firebase-config.js
+
+# ---------- IDE / editors ----------
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/*
+!.vscode/extensions.json
+*.code-workspace
+*.sublime-project
+*.sublime-workspace
+.atom/
+.svn/
+.swiftpm/
+.history
+.migrate_working_dir/
+
+# ---------- OS / filesystem noise ----------
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# ---------- Logs / temp / misc ----------
+*.log
+*.class
+*.pyc
+*.swp
+*.swo
+*~
+*.bak
+*.tmp
+*.orig
+*.rej
+
+# ---------- Dart / Flutter test & analysis cache ----------
+.test_cache/
+dart_test.yaml.bak
+analysis_options.yaml.bak
+
+# ---------- Env / secrets (never commit real credentials) ----------
+.env
+.env.*
+!.env.example
+*.env.local
+secrets/
+credentials.json
+service-account.json
+*-service-account.json
+
+# ---------- Stockroom local data (on-device exports, never in git) ----------
+*.stockroom.zip
+stockroom-backup-*.zip
+stockroom-safety-*.sqlite
+stockroom-snapshot-*.sqlite
+*.sqlite
+*.sqlite-wal
+*.sqlite-shm
+*.sqlite-journal
+
+# ---------- Symbolication / obfuscation maps ----------
+app.*.symbols
+app.*.map.json
+
+# ---------- Fastlane / release automation secrets ----------
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots/
+fastlane/test_output/
+android/fastlane/report.xml
+ios/fastlane/report.xml
